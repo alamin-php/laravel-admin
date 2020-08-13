@@ -17,13 +17,15 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'type' => 'admin',
             'password' => Hash::make('rootadmin'),
-        ]);        
+            'image' => 'users/200723103626avatar5.png',
+        ]);
 
         DB::table('users')->insert([
             'name' => 'User',
             'email' => 'user@gmail.com',
             'type' => 'user',
             'password' => Hash::make('rootuser'),
+            'image' => 'users/200723103643avatar2.png',
         ]);
     }
 }

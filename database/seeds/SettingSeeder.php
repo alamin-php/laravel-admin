@@ -16,6 +16,7 @@ class SettingSeeder extends Seeder
             'footer_left_text' => 'AMSoftit',
             'footer_web_link' => 'http://amsoftit.com',
             'footer_right_text' => 'AMSoftit',
+            'image' => 'settings/200723103557AdminLTELogo.png',
         ]);
     }
 }

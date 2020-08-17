@@ -32,6 +32,7 @@
             <!-- general form elements -->
             <div class="card card-default">
               <div class="card-header">
+                <a type="button" href="{{ route('user') }}" class="btn btn-info btn-sm float-sm-right"><i class="fa fa-undo"></i> Back</a>
                 <h3 class="card-title"><i class="fa fa-plus"></i> Create User</h3>
               </div>
               <!-- /.card-header -->
@@ -75,7 +76,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-default"><i class="fa fa-paper-plane"></i> Submit</button>
+                  <button type="submit" class="btn btn-info btn-sm"><i class="fa fa-save"></i> Save User Information</button>
                 </div>
               </form>
             </div>

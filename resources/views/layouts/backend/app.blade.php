@@ -7,10 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') | {{ config('app.name', 'Dashboard') }}</title>
-
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <!-- jQuery -->
+    <script src="{{ asset('assets/backend/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('assets/backend/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="{{ asset('assets/backend/dist/css/adminlte.min.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-        <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/backend/dist/css/toastr.min.css') }}">
+    {{-- <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> --}}
     @stack('styles')
 </head>
 
@@ -73,16 +74,37 @@
     </div>
     <!-- ./wrapper -->
 
-    <!-- jQuery -->
-    <script src="{{ asset('assets/backend/plugins/jquery/jquery.min.js') }}"></script>
+
     <!-- Bootstrap 4 -->
     <script src="{{ asset('assets/backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('assets/backend/dist/js/adminlte.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('assets/backend/dist/js/demo.js') }}"></script>
-    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="{{ asset('assets/backend/dist/js/toastr.min.js') }}"></script>
+    {{-- <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script> --}}
     {!! Toastr::message() !!}
+    <script src="{{ asset('assets/backend/dist/js/sweetalert.min.js') }}"></script>
+     {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> --}}
+     <script>  
+        $(document).on("click", "#delete", function(e){
+            e.preventDefault();
+            var link = $(this).attr("href");
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
+                    window.location.href = link;
+                }
+            })
+        });
+    </script>
     @stack('scripts')
 </body>
 

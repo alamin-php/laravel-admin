@@ -32,7 +32,7 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-                <a type="button" href="{{ route('user.create') }}" class="btn btn-default float-sm-right"><i class="fa fa-plus"></i> Add New</a>
+                <a type="button" href="{{ route('user.create') }}" class="btn btn-success btn-sm float-sm-right"><i class="fa fa-plus"></i> Add New</a>
             <h3 class="card-title"><i class="fa fa-list"></i> Users Table</h3>
         </div>
         <div class="card-body">
@@ -55,8 +55,8 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ ucfirst($user->type) }}</td>
                             <td>
-                                  <a href="{{ route('user.edit', $user->id) }}" class="btn btn-default btn-sm"><i class="fas fa-edit"></i></a>
-                                  <a href="{{ route('user.delete', $user->id) }}" class="btn btn-default btn-sm"><i class="fas fa-trash"></i></a>
+                                  <a href="{{ route('user.edit', $user->id) }}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
+                                  <a href="{{ route('user.delete', $user->id) }}" class="btn btn-danger btn-sm" id="delete"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
 

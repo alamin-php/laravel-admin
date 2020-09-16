@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,5 @@ Route::post('/user/update-password', 'UserController@updatePassword')->name('pas
 // Settings Route Here
 Route::get('/setting', 'SettingController@index')->name('setting');
 Route::post('/setting/update', 'CrudController@updateData')->name('setting.update');
+Route::get('/comment', 'CommentController@create')->name('comment.create');
+Route::get('/view-comment', 'CommentController@view')->name('comment.view');

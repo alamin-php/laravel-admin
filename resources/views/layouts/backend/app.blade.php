@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('assets/backend/dist/css/toastr.min.css') }}">
     {{-- <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> --}}
     @stack('styles')
+    @livewireStyles
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -106,6 +107,7 @@
         });
     </script>
     @stack('scripts')
+    @livewireScripts
 </body>
 
 </html>

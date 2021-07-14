@@ -32,16 +32,10 @@ class Comments extends Component
        $addComment = Comment::create([
             'details' => $this->details,'user_id' => Auth::user()->id,'image' => $filePath,
         ]);
-            if ($addComment) {
-            Toastr::success('Data Successfully Inserted', 'Success');
-            return redirect()->back();
-        } else {
-            return redirect()->back();
-        }
 
         $this->details = null;
         $this->image = '';
-        // return redirect()->to('/view-comment');
+        return redirect()->to('/view-comment');
         session()->flash('message', 'Comment send successfully.');
     }
 

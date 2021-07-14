@@ -37,3 +37,5 @@ Route::get('/setting', 'SettingController@index')->name('setting');
 Route::post('/setting/update', 'CrudController@updateData')->name('setting.update');
 Route::get('/comment', 'CommentController@create')->name('comment.create');
 Route::get('/view-comment', 'CommentController@view')->name('comment.view');
+
+Route::view('computers', 'livewire.computer');
